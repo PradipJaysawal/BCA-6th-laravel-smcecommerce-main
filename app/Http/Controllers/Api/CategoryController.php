@@ -16,4 +16,19 @@ class CategoryController extends Controller
             'data' => $categories
         ]);
     }
+
+    public function store(Request $request)
+    {
+        $data=$request->validate([
+            'priority'=>'required',
+            'name'=>'required',
+        ]);
+
+        $category = Category::create($data);
+
+        return response()->json([
+            'success' => 'true',
+            'message' => 'Category created successfully',
+        ]);
+    }
 }
