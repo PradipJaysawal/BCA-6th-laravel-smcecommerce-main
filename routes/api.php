@@ -9,6 +9,13 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
+
+//category
 Route::get('/categories',[CategoryController::class,'index']);
 Route::post('/category/store',[CategoryController::class,'store']);
+Route::put('/category/update/{id}',[CategoryController::class,'update']);
+
+
+//product
 Route::get('/latestproduct',[ProductController::class,'latest']);
+Route::get('/viewproduct/{id}',[ProductController::class,'viewproduct']);

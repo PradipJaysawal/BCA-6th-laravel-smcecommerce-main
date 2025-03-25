@@ -31,4 +31,19 @@ class CategoryController extends Controller
             'message' => 'Category created successfully',
         ]);
     }
+
+    public function update(Request $request, $id){
+        $data = $request->validate([
+            'priority' => 'required',
+            'name' => 'required',
+        ]);
+
+        $category = Category::find($id);
+        $category->update($data);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Category update successfully',
+        ]);
+    }
 }
