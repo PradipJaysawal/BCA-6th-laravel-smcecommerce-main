@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -44,6 +45,24 @@ class CategoryController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'Category update successfully',
+        ]);
+    }
+
+    public function destory(Request $request)
+    {
+        $Category = Category::find($request->id);
+        $product = Product::where('category_id',$Category->id)->count();
+
+        if($product > 0) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Category has products',
+            ]);
+        }
+        $Category->delete();
+        return response()->json([
+            'success' => true,
+            'message' => 'Category Delete Successfully',
         ]);
     }
 }
