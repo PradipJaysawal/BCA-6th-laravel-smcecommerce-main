@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>LICT Ecommerce</title>
-    <link rel="icon" href="{{asset('images/lictlogo.png')}}" type="image/x-icon">
+    <link rel="icon" href="{{asset('images/lion.png')}}" type="image/x-icon">
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link
@@ -20,7 +20,7 @@
         <p>Call Us: 9876543210</p>
     </div>
     <nav class="shadow bg-white px-16 py-4 flex justify-between items-center mb-10 sticky top-0 z-40">
-        <img src="{{asset('images/lictlogo.png')}}" alt="" class="h-16">
+        <img src="{{asset('images/lion.png')}}" alt="" class="h-16">
         <form action="{{route('search')}}" method="GET">
             <input type="search" class="border border-gray-300 rounded-lg px-3 py-2" placeholder="Search" name="search" value="{{request()->query('search')}}">
             <button type="submit" class="bg-blue-900 text-white rounded-lg px-4 py-2">Search</button>

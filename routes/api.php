@@ -20,3 +20,5 @@ Route::delete('/category/delete/',[CategoryController::class,'destory']);
 //product
 Route::get('/latestproduct',[ProductController::class,'latest']);
 Route::get('/viewproduct/{id}',[ProductController::class,'viewproduct']);
+
+Route::post('/product/store',[ProductController::class,'store']);
