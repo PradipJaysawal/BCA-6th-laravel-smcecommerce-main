@@ -49,7 +49,7 @@
         <p class="text-red-500 -mt-2">{{$message}}</p>
     @enderror
 
-    <p>Current Picture:</p>
+    <p class="dark:text-white">Current Picture:</p>
     <img src="{{asset('images/products/'.$product->photopath)}}" alt="" class="w-44">
 
     <div class="flex justify-center">
