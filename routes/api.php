@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\LoginController;
 use App\Http\Controllers\Api\ProductController;
+use GuzzleHttp\Middleware;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -13,10 +14,13 @@ Route::get('/user', function (Request $request) {
 
 //category
 Route::get('/categories',[CategoryController::class,'index']);
-Route::post('/category/store',[CategoryController::class,'store']);
-Route::put('/category/update/{id}',[CategoryController::class,'update']);
-Route::delete('/category/delete/',[CategoryController::class,'destory']);
 
+Route::middleware('auth:sanctum')->group(function(){
+    Route::post('/category/store',[CategoryController::class,'store']);
+    Route::put('/category/update/{id}',[CategoryController::class,'update']);
+    Route::delete('/category/delete/',[CategoryController::class,'destory']);
+
+});
 
 //product
 Route::get('/latestproduct',[ProductController::class,'latest']);
