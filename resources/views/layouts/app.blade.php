@@ -53,7 +53,9 @@
         @include('layouts.alert')
         <div class="flex">
             <nav class="w-56 h-screen shadow-lg bg-gray-100 dark:bg-slate-900 dark:text-white">
-                <img src="{{asset('images/lion.png')}}" alt="" class="w-32 mx-auto mt-4">
+                <img src="{{asset('images/lion.png')}}" alt="" class="w-32 mx-auto mt-4 block dark:hidden">
+                <img src="{{asset('images/lion-white.png')}}" alt="" class="w-32 mx-auto mt-4 hidden dark:block">
+
                 <ul class="mt-8">
                     <li>
                         <a href="{{route('dashboard')}}" class="block hover:bg-gray-200 p-4 rounded-lg font-bold text-xl @if(Route::is('dashboard'))  bg-blue-900 text-white hover:bg-blue-700 @endif">Dashboard</a>
