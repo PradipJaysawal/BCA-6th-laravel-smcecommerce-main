@@ -17,4 +17,18 @@ class CartController extends Controller
             'carts' => $carts,
         ]);
     }
+    public function store(Request $request)
+    {
+        $data = $request->validate([
+            'product_id' => 'required',
+            'qty' => 'required'
+        ]);
+        $data['user_id'] = Auth::id();
+
+        Cart::create($data);
+        return response()->json([
+            'status'=>208,
+            'message'=>'Product added to cart successfully',
+        ]);
+    }
 }
