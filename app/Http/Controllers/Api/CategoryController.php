@@ -12,10 +12,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::orderBy('priority')->get();
-        return response()->json([
-            'msg' => 'Category Fetched Successfully',
-            'data' => $categories
-        ]);
+        return response()->json($categories);
     }
 
     public function store(Request $request)
