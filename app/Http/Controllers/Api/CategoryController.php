@@ -62,4 +62,10 @@ class CategoryController extends Controller
             'message' => 'Category Delete Successfully',
         ]);
     }
+
+    public function categoryproduct($id)
+    {
+        $products = Product::where('category_id', $id)->get();
+        return response()->json($products);
+    }
 }
