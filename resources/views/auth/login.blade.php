@@ -22,7 +22,13 @@
                 <div class="text-right mb-4">
                     <a href="{{route('password.request')}}" class="text-blue-900 text-sm">Forgot Password ?</a>
                 </div>
-                <button type="submit" class="w-full bg-blue-900 text-white rounded-lg px-4 py-2">Login</button>
+                <button type="submit" class="w-full bg-blue-900 text-white rounded-lg px-4 py-2 mb-4">Login</button>
+
+                <div className="flex items-center justify-between mb-4">
+                    <p>Don't have an account?
+                    <a href="/register" className="text-blue-500 font-semibold hover:text-orange-600 hover:underline"> Register Now</a>
+                    </p>
+                </div>
             </form>
         </div>
     </div>

@@ -18,15 +18,15 @@
         </div>
         <div class="bg-yellow-100 p-5 shadow rounded-lg">
             <h2 class="text-2xl font-bold text-blue-900">Pending Orders</h2>
-            <p>Pending Orders: 20</p>
+            <p>Pending Orders: {{$pending}}</p>
         </div>
         <div class="bg-purple-100 p-5 shadow rounded-lg">
             <h2 class="text-2xl font-bold text-blue-900">Processing Orders</h2>
-            <p>Processing Orders: 30</p>
+            <p>Processing Orders: {{$processing}}</p>
         </div>
         <div class="bg-pink-100 p-5 shadow rounded-lg">
             <h2 class="text-2xl font-bold text-blue-900">Completed Orders</h2>
-            <p>Completed Orders: 40</p>
+            <p>Completed Orders: {{$delivered}}</p>
         </div>
 
         <div>
